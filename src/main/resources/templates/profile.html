@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+</style>
+
+</head>
+<body>
+	
+	
+
+
+	<section class="text-center">
+		
+			<div class="bg-image"
+    style="background-image: url('https://us.123rf.com/450wm/mkphotoshu/mkphotoshu2211/mkphotoshu221100016/194391922-close-up-business-colleagues-discussing-new-opportunities-plan-refers-to-a-set-of-agreements-that.jpg?ver=6');
+           height: 100vh;
+           background-repeat: no-repeat;
+           background-size: cover;">
+
+		<h1>User Profile Page</h1>
+
+		<h4>Manager Name: [[${user.name}]]</h4>
+
+		
+		<button class="button button1">
+        	<a class="nav-link" href="/employees">Employees </a>
+		</button>
+		
+
+		
+	</section>
+
+</body>
+</html>  

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+ 
+<body>
+	
+	<nav th:fragment= "header" class="navbar navbar-expand-lg navbar-dark" style="background-color: black; color: white;">
+  <a class="navbar-brand">Task Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+  
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/employees">Employees </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/status">Status </a>
+      </li>  
+    </ul>
+    
+    <form th:action="@{/searchEmployee}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name= "keyword" id = "keyword" type="text" placeholder="Search" aria-label="Search" th:value="${keyword}">
+        <input class="btn btn-outline-success active my-2 my-sm-0" type="submit" value="Search" />
+    </form>
+    
+     </div>
+</nav>
+
+    <div class="container my-5">
+        <h3>Update Status</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/update-status/{id}(id=${status.id})}" th:object="${status}" method="post">
+                        <div class="row">
+                            
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Status Name</label> 
+                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Status Name" />
+                            </div>
+ 
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value=" Submit ">
+                            </div>
+     
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+ 
+</html>
